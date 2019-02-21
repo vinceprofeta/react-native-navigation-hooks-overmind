@@ -60,7 +60,7 @@ class ListComponent extends Component {
   }
 
   onClickDealItem() {
-
+    console.log('sfdjhfdsjhsdfhjkfsd')
   }
 }
 

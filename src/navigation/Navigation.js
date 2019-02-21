@@ -78,22 +78,8 @@ export function pushTabBasedApp() {
                 options: {
                   topBar: {
                     title: {
-                      text: 'TAB 1'
-                    },
-                    leftButtons: [
-                      {
-                        id: 'nav_user_btn',
-                        icon: require('img/icons/ic_nav_user.png'),
-                        color: 'black'
-                      }
-                    ],
-                    rightButtons: [
-                      {
-                        id: 'nav_logout_btn',
-                        icon: require('img/icons/ic_nav_logout.png'),
-                        color: 'black'
-                      }
-                    ]
+                      text: 'Cool New App'
+                    }
                   }
                 }
               }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navigation } from 'react-native-navigation';
 import _ from 'lodash';
 import {
   StyleSheet,
@@ -70,40 +71,41 @@ export default class DealsItemInnerActive extends React.PureComponent {
               ]}
             >
              
-              <ImageSlider
-                removeClippedSubviews={false}
-                loadMinimal={false}
-                activeDotStyle={{ height: 5, width: 5 }}
-                dotStyle={{ height: 5, width: 5 }}
-                height={images.length > 1 ? 210 : 206}
-                paginationStyle={{ bottom: 0 }}
-              >
-                {_.map(images, (image, i) => {                 
-                  return (
-                    <TouchableWithoutFeedback
-                      onPress={() => this.onPress()}
-                      onPressIn={this.onPressedIn}
-                      onPressOut={this.onPressedOut}
-                      key={`${i}`}
-                    >
-                      <View style={styles.imageHeight}>
-                        <FastImage
-                          duration={800}
-                          delay={300}
-                          priority={
-                            i === 0 && this.props.index < 10 ? 'high' : 'normal'
-                          }
-                          useImage={!this.props.useFastImage}
-                          index={this.props.index}
-                          imageIndex={i}
-                          loader={i === 0 ? image : null}
-                          image={image}
-                        />
-                      </View>
-                    </TouchableWithoutFeedback>
-                  );
-                })}
-              </ImageSlider>
+                <ImageSlider
+                  removeClippedSubviews={false}
+                  loadMinimal={false}
+                  activeDotStyle={{ height: 5, width: 5 }}
+                  dotStyle={{ height: 5, width: 5 }}
+                  height={images.length > 1 ? 210 : 206}
+                  paginationStyle={{ bottom: 0 }}
+                >
+                  {_.map(images, (image, i) => {                 
+                    return (
+                      <TouchableWithoutFeedback
+                        onPress={() => this.onPress()}
+                        onPressIn={this.onPressedIn}
+                        onPressOut={this.onPressedOut}
+                        key={`${i}`}
+                      >
+                        <View style={styles.imageHeight}>
+                          <FastImage
+                            duration={800}
+                            delay={300}
+                            priority={
+                              i === 0 && this.props.index < 10 ? 'high' : 'normal'
+                            }
+                            useImage={!this.props.useFastImage}
+                            index={this.props.index}
+                            imageIndex={i}
+                            loader={i === 0 ? image : null}
+                            image={image}
+                          />
+                        </View>
+                      </TouchableWithoutFeedback>
+                    );
+                  })}
+                </ImageSlider>
+             
             </View>
 
             <TouchableWithoutFeedback
@@ -134,8 +136,8 @@ export default class DealsItemInnerActive extends React.PureComponent {
     );
   }
 
-  onPress() {
-    
+  onPress(e) {
+   this.props.onPress(e) 
   }
 
   componentWillUnmount() {

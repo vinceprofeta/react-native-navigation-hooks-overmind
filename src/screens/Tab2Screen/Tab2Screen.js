@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   }
 });
 
-class Tab2Screen extends PureComponent {
+class SampleScreen extends PureComponent {
   static options(passProps) {
     return {
       topBar: {
@@ -68,8 +68,8 @@ class Tab2Screen extends PureComponent {
   }
 }
 
-Tab2Screen.propTypes = {
+SampleScreen.propTypes = {
   
 };
 
-export default Tab2Screen;
+export default SampleScreen;

@@ -7,7 +7,8 @@ import {
   WelcomeScreen,
   LoginScreen,
   Tab1Screen,
-  Tab2Screen
+  Tab2Screen,
+  DemoScreen
 } from 'AppScreens';
 
 
@@ -15,7 +16,8 @@ import {
   WELCOME_SCREEN,
   LOGIN_SCREEN,
   TAB1_SCREEN,
-  TAB2_SCREEN
+  TAB2_SCREEN,
+  DEMO_SCREEN
 } from './Screens';
 
 function WrappedComponent(Component) {
@@ -35,5 +37,6 @@ export default function () {
   Navigation.registerComponent(LOGIN_SCREEN, () => WrappedComponent(LoginScreen));
   Navigation.registerComponent(TAB1_SCREEN, () => WrappedComponent(Tab1Screen));
   Navigation.registerComponent(TAB2_SCREEN, () => WrappedComponent(Tab2Screen));
+  Navigation.registerComponent(DEMO_SCREEN, () => WrappedComponent(DemoScreen));
   console.info('All screens have been registered...');
 }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { DEMO_SCREEN } from 'AppNavigator';
+import { Navigation } from 'react-native-navigation';
 import {
   StyleSheet,
   View,
@@ -33,12 +35,31 @@ export default class FullWidthCardWrapper extends React.PureComponent {
         >
            <FullWidthCard
             {...this.props}
+            onPress={this.onPress.bind(this)}
             onPressedIn={this.onPressedIn}
             onPressedOut={this.onPressedOut}
           />
         </Animated.View>
       </View>
     );
+  }
+
+  onPress() {
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: DEMO_SCREEN,
+        passProps: {
+          
+        },
+        options: {
+          topBar: {
+            title: {
+              text: 'YEPPPPP'
+            }
+          }
+        }
+      }
+    });
   }
 
   onPressedIn() {
